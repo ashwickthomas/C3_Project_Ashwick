@@ -70,4 +70,18 @@ public class Restaurant {
         return name;
     }
 
+        public double CartPrice(List<String> ItemSelected)
+        {
+            for( Item item : menu)
+            {
+                if(ItemSelected.contains((item.getName())) )
+                {
+                    total=total+item.getPrice();
+                }
+
+            }
+            return total;
+        }
+
+
 }
