@@ -72,6 +72,17 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
-
+    @Test
+    public void show_total_value_of_items_Selected_should_return_Correcttotalprice()
+    {
+        restaurant.addToMenu("Noodles",50);
+        restaurant.addToMenu("ButterPaneer",120);
+        restaurant.addToMenu("Biriyani",180);
+        List <String> itemselected = new ArrayList<String>();
+        itemselected.add("Noodles");
+        itemselected.add("ButterPaneer");
+        itemselected.add("Biriyani");
+        assertEquals(350,restaurant.CartPrice(itemselected));
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
